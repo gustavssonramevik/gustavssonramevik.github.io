@@ -1,0 +1,19 @@
+{% assign w = site.data.wedding %}
+<section class="section section--program" style="width:1366.000px;height:768.000px;background:#f8f3f0;">
+  {% for item in w.program %}
+  <div class="line program-line" style="left:686.673px;top:{{ 269 | plus: forloop.index0 | times: 79 | plus: 269 }}px;width:602.527px;height:1.000px;transform:rotate(0.000deg);background:#6a3137;"></div>
+  {% endfor %}
+  <div class="line program-line" style="left:683.000px;top:665.587px;width:602.527px;height:1.000px;transform:rotate(0.000deg);background:#6a3137;"></div>
+
+  <div class="txt section-header" style="left:76.800px;top:76.800px;width:591.133px;height:101.976px;transform:rotate(0.000deg);color:#6a3137;font-family:'canva_YAGLy65PgHg',serif;font-size:85.333px;line-height:1.130;text-align:justify;text-transform:none;letter-spacing:-1.024px;font-weight:normal;font-style:normal;white-space:pre-wrap;">Dagens program</div>
+
+  <div class="txt program-date" style="left:76.800px;top:169.136px;width:346.628px;height:25.280px;transform:rotate(0.000deg);color:#6a3137;font-family:'canva_YACgEVY5j_w',serif;font-size:21.333px;line-height:1.890;text-transform:uppercase;letter-spacing:2.731px;font-weight:normal;font-style:normal;white-space:pre-wrap;">{{ w.wedding_date_display }}</div>
+
+  {% for item in w.program %}
+  {% assign idx = forloop.index %}
+  <div class="txt program-time program-time-{{ idx }}" style="left:705.264px;top:{{ 292 | plus: forloop.index0 | times: 81 | plus: 292 }}px;width:122.886px;height:23.200px;transform:rotate(0.000deg);color:#6a3137;font-family:'canva_YACgEVY5j_w',serif;font-size:20.000px;line-height:1.890;text-transform:uppercase;letter-spacing:2.560px;font-weight:normal;font-style:normal;white-space:pre-wrap;">{{ item.time }}</div>
+  <div class="txt program-event program-event-{{ idx }}" style="left:813.901px;top:{{ 294 | plus: forloop.index0 | times: 81 | plus: 294 }}px;width:358.782px;height:23.205px;transform:rotate(0.000deg);color:#6a3137;font-family:'canva_YACgEVY5j_w',serif;font-size:20.000px;line-height:1.890;text-align:justify;text-transform:uppercase;letter-spacing:2.560px;font-weight:normal;font-style:normal;white-space:pre-wrap;">{{ item.event }}</div>
+  {% endfor %}
+
+  <div class="txt program-empty" style="left:705.264px;top:697.561px;width:122.886px;height:23.200px;transform:rotate(0.000deg);color:#6a3137;font-family:'canva_YACgEVY5j_w',serif;font-size:20.000px;line-height:1.890;text-transform:uppercase;letter-spacing:2.560px;font-weight:normal;font-style:normal;white-space:pre-wrap;"></div>
+</section>

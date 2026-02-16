@@ -1,0 +1,16 @@
+title: "Johan & Therese – Bröllop 2026"
+description: "Bröllopsinbjudan för Johan & Therese Gustavsson Ramevik, 5 september 2026"
+url: "https://gustavssonramevik.se"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - remove
+  - README.md
+  - .DS_Store
