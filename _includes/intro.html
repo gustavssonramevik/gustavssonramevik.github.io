@@ -1,8 +1,0 @@
-{% assign w = site.data.wedding %}
-<section class="section section--intro" style="width:1366.000px;height:660.000px;background:#f8f3f0;">
-  <div class="txt intro-copy intro-copy-lead" style="left:156.342px;top:76.800px;width:1053.317px;height:92.000px;transform:rotate(0.000deg);color:#6a3137;font-family:'canva_YACgEVY5j_w',serif;font-size:20.000px;line-height:1.890;text-align:center;text-transform:uppercase;letter-spacing:2.560px;font-weight:normal;font-style:normal;white-space:pre-wrap;">{{ w.intro.lead }}</div>
-  {% for p in w.intro.paragraphs %}
-  <div class="txt intro-copy intro-copy-sub" style="left:156.342px;top:{{ 193 | plus: forloop.index0 | times: 130 | plus: 193 }}px;width:1053.317px;height:110.000px;transform:rotate(0.000deg);color:#6a3137;font-family:'canva_YACgEVY5j_w',serif;font-size:17.000px;line-height:1.720;text-align:center;text-transform:none;letter-spacing:0.000px;font-weight:normal;font-style:normal;white-space:pre-wrap;">{{ p }}</div>
-  {% endfor %}
-  <div class="txt" id="countdown" style="left:180.149px;top:531.575px;width:1081.238px;height:101.973px;transform:rotate(0.000deg);color:#6a3137;font-family:'canva_YAGLy65PgHg',serif;font-size:85.333px;line-height:1.130;text-transform:none;letter-spacing:-1.024px;font-weight:normal;font-style:normal;white-space:pre-wrap;">COUNTDOWN PLACEHOLDER</div>
-</section>
