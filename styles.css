@@ -114,6 +114,166 @@ img {
   background-color: #6a3137;
 }
 
+.jt-mark-intro {
+  background-color: #6a3137;
+}
+
+.section--program {
+  position: relative;
+}
+
+.section--program .program-timeline {
+  position: absolute;
+  left: 130px;
+  right: 130px;
+  top: 220px;
+  bottom: 58px;
+  display: grid;
+  grid-template-columns: 1fr 70px 1fr;
+  grid-template-rows: repeat(7, minmax(58px, 1fr));
+  align-items: center;
+}
+
+.section--program .program-axis {
+  grid-column: 2;
+  grid-row: 1 / 8;
+  justify-self: center;
+  align-self: stretch;
+  width: 2px;
+  background: rgba(106, 49, 55, 0.52);
+}
+
+.section--program .program-item {
+  display: contents;
+}
+
+.section--program .program-dot {
+  grid-column: 2;
+  grid-row: var(--row);
+  justify-self: center;
+  align-self: center;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(106, 49, 55, 0.95);
+  z-index: 3;
+}
+
+.section--program .program-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.section--program .program-card {
+  position: relative;
+  max-width: 380px;
+  color: var(--maroon);
+  z-index: 2;
+}
+
+.section--program .is-right .program-card {
+  grid-column: 3;
+  grid-row: var(--row);
+  justify-self: start;
+  text-align: left;
+  padding-left: 28px;
+}
+
+.section--program .is-left .program-card {
+  grid-column: 1;
+  grid-row: var(--row);
+  justify-self: end;
+  text-align: right;
+  padding-right: 28px;
+}
+
+.section--program .is-right .program-card::before,
+.section--program .is-left .program-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 1px;
+  background: rgba(106, 49, 55, 0.42);
+}
+
+.section--program .is-right .program-card::before {
+  left: 0;
+}
+
+.section--program .is-left .program-card::after {
+  right: 0;
+}
+
+.section--program .program-card-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.section--program .is-left .program-card-inner {
+  flex-direction: row-reverse;
+}
+
+.section--program .program-copy {
+  max-width: 210px;
+}
+
+.section--program .is-left .program-copy {
+  text-align: right;
+}
+
+.section--program .is-right .program-copy {
+  text-align: left;
+}
+
+.section--program .program-time {
+  margin: 0;
+  font-family: 'canva_YACgEVY5j_w', serif;
+  font-size: 18px;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section--program .program-event {
+  margin: 3px 0 0;
+  font-family: 'canva_YACgEVY5j_w', serif;
+  font-size: 19px;
+  line-height: 1.16;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.faq-dress-note {
+  white-space: normal !important;
+}
+
+.dress-swatches {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.dress-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(106, 49, 55, 0.22);
+  display: inline-block;
+}
+
+.dress-swatch--brown { background: #7a5a3a; }
+.dress-swatch--beige { background: #d9c4a2; }
+.dress-swatch--champagne { background: #f2e5c5; }
+.dress-swatch--wine { background: #7a2a36; }
+.dress-swatch--khaki { background: #b8ad76; }
+.dress-swatch--navy { background: #24395f; }
+
 .cloud-tint img {
   filter: sepia(0.55) hue-rotate(-28deg) saturate(0.68) brightness(0.8);
 }
@@ -155,18 +315,6 @@ img {
   .section--hero {
     height: 100vh !important;
     min-height: 100vh;
-  }
-
-  .section--program .program-line {
-    left: calc(50% - 301px) !important;
-  }
-
-  .section--program .program-time {
-    left: calc(50% - 282px) !important;
-  }
-
-  .section--program .program-event {
-    left: calc(50% - 173px) !important;
   }
 }
 
@@ -394,6 +542,15 @@ img {
     max-width: 42ch;
   }
 
+  .section--intro .intro-logo {
+    width: 112px !important;
+    aspect-ratio: 369 / 259;
+    height: auto !important;
+    align-self: center;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
   .section--local {
     padding-top: 28px;
     padding-bottom: 34px;
@@ -468,11 +625,6 @@ img {
     padding: 30px 14px 34px;
   }
 
-  .section--program .program-line,
-  .section--program .program-empty {
-    display: none;
-  }
-
   .section--program .section-header {
     order: 1;
   }
@@ -486,39 +638,68 @@ img {
     opacity: 0.75;
   }
 
-  .section--program .program-time,
-  .section--program .program-event {
-    width: 100% !important;
-    text-align: left !important;
+  .section--program .program-timeline {
+    order: 3;
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: min(100%, 382px);
+    margin: 6px auto 0;
+    grid-template-columns: 1fr 30px 1fr;
+    grid-template-rows: repeat(7, minmax(66px, auto));
+  }
+
+  .section--program .program-axis {
+    width: 2px;
+  }
+
+  .section--program .program-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .section--program .program-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .section--program .program-card {
+    max-width: none;
+  }
+
+  .section--program .is-right .program-card {
+    padding-left: 8px;
+  }
+
+  .section--program .is-left .program-card {
+    padding-right: 8px;
+  }
+
+  .section--program .is-right .program-card::before,
+  .section--program .is-left .program-card::after {
+    width: 5px;
+  }
+
+  .section--program .program-card-inner {
+    gap: 8px;
+  }
+
+  .section--program .program-copy {
+    max-width: 128px;
   }
 
   .section--program .program-time {
-    padding: 10px 8px 0;
-    font-size: 13px !important;
-    letter-spacing: 1.5px !important;
-    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.8px;
   }
 
   .section--program .program-event {
-    padding: 2px 8px 12px;
-    font-size: 17px !important;
-    line-height: 1.25 !important;
-    border-bottom: 1px solid rgba(106, 49, 55, 0.2);
-  }
-
-  .section--program .program-time-1 { order: 3; }
-  .section--program .program-event-1 { order: 4; }
-  .section--program .program-time-2 { order: 5; }
-  .section--program .program-event-2 { order: 6; }
-  .section--program .program-time-3 { order: 7; }
-  .section--program .program-event-3 { order: 8; }
-  .section--program .program-time-4 { order: 9; }
-  .section--program .program-event-4 { order: 10; }
-  .section--program .program-time-5 { order: 11; }
-  .section--program .program-event-5 {
-    order: 12;
-    border-bottom: 0;
-    padding-bottom: 0;
+    margin-top: 2px;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    line-height: 1.18;
   }
 
   .section--faqs {
@@ -573,6 +754,20 @@ img {
   .section--faqs .faq-gavor-body {
     font-size: 15px !important;
     line-height: 1.58 !important;
+  }
+
+  .section--faqs .faq-dress-note {
+    margin-top: 2px;
+  }
+
+  .section--faqs .dress-swatches {
+    margin-top: 8px;
+    gap: 8px;
+  }
+
+  .section--faqs .dress-swatch {
+    width: 16px;
+    height: 16px;
   }
 
   .section--toast {
