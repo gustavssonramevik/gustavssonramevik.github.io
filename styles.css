@@ -300,7 +300,7 @@ img {
 
 .dress-swatch--brown { background: #7a5a3a; }
 .dress-swatch--beige { background: #d9c4a2; }
-.dress-swatch--champagne { background: #f2e5c5; }
+.dress-swatch--darkgreen { background: #35563d; }
 .dress-swatch--wine { background: #7a2a36; }
 .dress-swatch--khaki { background: #b8ad76; }
 .dress-swatch--navy { background: #24395f; }
@@ -426,7 +426,14 @@ img {
   }
 
   .section--rsvp .section-header { order: 1; margin-bottom: 8px; }
-  .section--rsvp .rsvp-text { order: 2; max-width: 42ch; }
+  .section--rsvp .rsvp-text {
+    order: 2;
+    max-width: 42ch;
+    font-size: 19.965px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+  }
 }
 
 @media (max-width: 900px) {
@@ -945,8 +952,8 @@ img {
   .section--rsvp .rsvp-text {
     max-width: 39ch;
     margin-inline: auto;
-    font-size: 16px !important;
-    line-height: 1.7 !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
     letter-spacing: 0 !important;
     text-transform: none !important;
   }
